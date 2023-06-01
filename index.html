@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        background-color: #140f2e;
+      }
+      .header {
+        text-align: center;
+        margin: 20px;
+      }
+      .container {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+      }
+      button {
+        background-color: #fff;
+      }
+      .box {
+        width: 400px;
+        min-height: 800px;
+        border: 2px solid #4e31b8;
+        border-radius: 5px;
+        box-sizing: border-box;
+        margin: 50px 30px;
+      }
+      input {
+        background-color: #d7efff;
+        border: none;
+        border-radius: 10px;
+        height: 30px;
+        padding: 10px;
+        width: 30%;
+        color: #261f50;
+      }
+      button {
+        height: 30px;
+        border: none;
+        background-color: #9dc8ff;
+        margin-left: 10px;
+        border-radius: 10px;
+      }
+      h1 {
+        color: #fff;
+      }
+      p {
+        margin: 5px 5px 10px 5px;
+        padding: 15px 20px;
+        width: 96%;
+        min-height: 50px;
+        overflow-wrap: break-word;
+        border-radius: 2px;
+        position: relative;
+      }
+      .txt {
+        display: inline-block;
+        color: #fff;
+        font-size: 1.1rem;
+        font-weight: lighter;
+        margin-bottom: 0;
+      }
+      .t1 {
+        position: absolute;
+        top: 100px;
+        left: -33.333%;
+      }
+      .t2 {
+        position: absolute;
+        top: 100px;
+        left: 0;
+      }
+      .t3 {
+        position: absolute;
+        top: 100px;
+        left: 33.333%;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="header">
+      <!-- <h1>할 일</h1> -->
+      <input placeholder="Todo" />
+      <button>Click</button>
+      <!-- <div>
+        <p class="txt t1">TO DO</p>
+        <p class="txt t2">Doing</p>
+        <p class="txt t3">Done</p>
+      </div> -->
+    </section>
+    <section class="container">
+      <div class="box todo" category="todo"></div>
+      <div class="box doing" category="doing"></div>
+      <div class="box done" category="done"></div>
+    </section>
+    <script src="todo.js"></script>
+  </body>
+</html>
