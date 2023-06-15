@@ -8,98 +8,117 @@
     <style>
       * {
         box-sizing: border-box;
+        margin: 0;
+        padding: 0;
       }
       body {
-        background-color: #140f2e;
+        background-color: #222;
       }
       .header {
+        margin: 20px auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         text-align: center;
-        margin: 20px;
       }
+      .tt {
+        background-color: #d7efff;
+        border: none;
+        border-radius: 10px;
+        padding: 10px;
+        width: 500px;
+        color: #261f50;
+        margin: 10px 0;
+      }
+      button {
+        width: 500px;
+        height: 30px;
+        border: none;
+        background-color: #9dc8ff;
+        border-radius: 10px;
+        margin-top: 20px;
+      }
+      .delete-button {
+        background-color: transparent;
+        margin: 10px;
+
+        text-align: center;
+        width: 30px;
+        height: 5px;
+      }
+
       .container {
         display: flex;
         justify-content: center;
         align-content: center;
       }
-      button {
-        background-color: #fff;
-      }
+
       .box {
         width: 400px;
         min-height: 800px;
         border: 2px solid #4e31b8;
-        border-radius: 5px;
-        box-sizing: border-box;
-        margin: 50px 30px;
+        border-radius: 15px;
+
+        margin: 50px 40px;
+        background-color: #d9eaff;
       }
-      input {
-        background-color: #d7efff;
-        border: none;
-        border-radius: 10px;
-        height: 30px;
-        padding: 10px;
-        width: 30%;
-        color: #261f50;
+      .txt {
+        color: #224370;
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-align: center;
+        height: 10px;
+        position: relative;
+        margin-top: 20px;
+        margin-bottom: 50px;
       }
-      button {
-        height: 30px;
-        border: none;
-        background-color: #9dc8ff;
-        margin-left: 10px;
-        border-radius: 10px;
-      }
-      h1 {
-        color: #fff;
-      }
+
       p {
-        margin: 5px 5px 10px 5px;
+        margin: 15px 5px 5px 9px;
         padding: 15px 20px;
         width: 96%;
         min-height: 50px;
         overflow-wrap: break-word;
-        border-radius: 2px;
+        border-radius: 8px;
         position: relative;
       }
-      .txt {
-        display: inline-block;
-        color: #fff;
-        font-size: 1.1rem;
-        font-weight: lighter;
-        margin-bottom: 0;
-      }
-      .t1 {
-        position: absolute;
-        top: 100px;
-        left: -33.333%;
-      }
-      .t2 {
-        position: absolute;
-        top: 100px;
-        left: 0;
-      }
-      .t3 {
-        position: absolute;
-        top: 100px;
-        left: 33.333%;
+
+      .todo-card {
+        border-radius: 5px;
+        padding: 20px;
+        margin: 10px 10px;
+        margin-bottom: 10px;
       }
     </style>
   </head>
   <body>
     <section class="header">
-      <!-- <h1>할 일</h1> -->
-      <input placeholder="Todo" />
+      <input class="tt" id="title" placeholder="Title" />
+      <textarea
+        class="tt"
+        id="content"
+        cols="40"
+        rows="4"
+        placeholder="Content"
+      ></textarea>
+      <input class="tt" id="url" type="url" placeholder="URL" />
+
       <button>Click</button>
-      <!-- <div>
-        <p class="txt t1">TO DO</p>
-        <p class="txt t2">Doing</p>
-        <p class="txt t3">Done</p>
-      </div> -->
     </section>
     <section class="container">
-      <div class="box todo" category="todo"></div>
-      <div class="box doing" category="doing"></div>
-      <div class="box done" category="done"></div>
+      <div class="box todo" category="todo">
+        <div class="txt">ToDo</div>
+      </div>
+
+      <div class="box doing" category="doing">
+        <div class="txt">Doing</div>
+      </div>
+
+      <div class="box done" category="done">
+        <div class="txt">Done</div>
+      </div>
     </section>
-    <script src="todo.js"></script>
+    <script src="todo_2.js"></script>
   </body>
 </html>
