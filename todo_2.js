@@ -15,17 +15,20 @@ const colors = [
 let dragTarget = {};
 let colorIndex = 0;
 
+// 색상 배열
 function 색추출기(colors) {
   const 랜덤값 = colorIndex % colors.length;
   colorIndex++;
   return colors[랜덤값];
 }
 
+// 버튼 클릭
 document.querySelector("button").addEventListener("click", (e) => {
   const title = document.querySelector("#title").value;
   const content = document.querySelector("#content").value;
   const url = document.querySelector("#url").value;
 
+  // 새로운 todo 객체 생성
   const todo = {
     category: "todo",
     color: 색추출기(colors),
@@ -35,11 +38,13 @@ document.querySelector("button").addEventListener("click", (e) => {
     url: url,
   };
 
+  // todo 객체를 로컬스토리지에 저장
   localStorage.setItem(todo.id, JSON.stringify(todo));
 
   const newTag = createTag(todo);
   document.querySelector(".todo").appendChild(newTag);
 
+  // input창 초기화
   document.querySelector("#title").value = "";
   document.querySelector("#content").value = "";
   document.querySelector("#url").value = "";
@@ -63,7 +68,7 @@ function createTag(todo) {
     const urlElement = document.createElement("a");
     urlElement.href = url;
     urlElement.target = "_blank";
-    urlElement.textContent = "Go to URL";
+    urlElement.textContent = url;
     newTag.appendChild(urlElement);
   }
 
@@ -73,6 +78,7 @@ function createTag(todo) {
   timestampElement.classList.add("timestamp");
   newTag.appendChild(timestampElement);
 
+  // 삭제버튼
   const deleteBtn = document.createElement("button");
   deleteBtn.textContent = "Delete";
   deleteBtn.classList.add("delete-button");
@@ -84,7 +90,6 @@ function createTag(todo) {
 
   newTag.style.backgroundColor = color;
 
-  // Add draggable attribute to the card
   newTag.draggable = true;
 
   newTag.addEventListener("dragstart", (e) => {
@@ -100,7 +105,7 @@ function createTag(todo) {
   return newTag;
 }
 
-// Add event listeners for dragover and drop to each box
+// 박스 드래그 앤 드롭
 const boxes = document.querySelectorAll(".box");
 boxes.forEach((box) => {
   box.addEventListener("dragover", (e) => {
